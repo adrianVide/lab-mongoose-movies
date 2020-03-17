@@ -34,3 +34,11 @@ router.get('/:id', async (req, res, next) => {
     res.render('celebrity/show', foundCeleb ) 
 })
 
+router.get('/:id/delete', (req, res, next) => {
+    Celeb.findByIdAndDelete(req.params.id)
+    .then(() => {
+        res.redirect('/celebrity');
+    })
+    .catch((err) => {console.log('error');})
+
+})

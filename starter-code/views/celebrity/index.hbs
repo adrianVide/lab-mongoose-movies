@@ -1,20 +1,24 @@
 <h2>Celebrities?</h2>
 
 <div class="d-flex justify-content-center row">{{#each celebrity}}
-{{!-- <a href="celebrity/{{this.id}}"> --}}
+    {{!-- <a href="celebrity/{{this.id}}"> --}}
     <div class="card mt-5 mx-3 shadow-sm w-25 rounded border-0">
         <img class="card-img-top" style="object-fit: cover;" src="{{this.image}}" alt="">
         <div class="card-body spot-color">
             <h5 class="card-title">{{this.name}}</h5>
             <p class="card-text " style="color: rgb(182, 182, 182)">{{this.occupation}}</p>
             <p class="card-text">{{this.catchPhrase}}</p>
-      <a href="/celebrity/{{this.id}}"><button class="btn align-text-bottom btn-outline-dark">Ver ficha</button></a>  
+            <a href="/celebrity/{{this.id}}"><button class="btn align-text-bottom btn-outline-dark">Ver
+                    ficha</button></a>
+            <a href="/celebrity/{{this.id}}/delete"><button class="btn align-text-bottom btn-outline-danger">Eliminar
+                    celebrity</button></a>
+
 
         </div>
     </div>
-{{!-- </a> --}}
+    {{!-- </a> --}}
 
 
-{{/each}}</div>
+    {{/each}}</div>
 
-<a href="/celebrity/new">new!</a> 
+<a href="/celebrity/new">new!</a>
