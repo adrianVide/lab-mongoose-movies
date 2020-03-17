@@ -42,3 +42,25 @@ router.get('/:id/delete', (req, res, next) => {
     .catch((err) => {console.log('error');})
 
 })
+
+router.get('/:id/edit', async (req, res, next) => {
+    let celebToEdit = await Celeb.findById(req.params.id)
+    
+    // console.log(celebToEdit);
+    res.render('celebrity/edit', celebToEdit);
+    
+})
+
+router.post('/:id/edit', (req, res, next) => {
+    let {name, occupation, catchPhrase} = req.body;
+    const editedCeleb = new editedCeleb ({name, occupation, catchPhrase})
+    editedCeleb.save()
+    .then(() => {
+        res.redirect('/celebrity');
+    })
+    .catch((err) => {console.log('error');})
+})
+
+// router.get('/:id/edit', (req, res, next) => {
+//     res.render('celebrity/edit');
+// });
