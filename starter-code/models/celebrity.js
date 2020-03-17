@@ -14,6 +14,6 @@ const celebSchema = new Schema(
   }
 );
 
-const Celeb = mongoose.model('User', celebSchema);
+const Celeb = mongoose.model('Celeb', celebSchema);
 
 module.exports = Celeb;
